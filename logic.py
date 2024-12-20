@@ -2,7 +2,7 @@ import sqlite3
 from config import DATABASE
 
 skills = [ (_,) for _ in (['Python', 'SQL', 'API', 'Discord'])]
-statuses = [ (_,) for _ in (['Prototyping', 'In Development', 'Completed', 'Updated', 'Abandoned/Not supported'])]
+statuses = [ (_,) for _ in (['Prototip Oluşturma', 'Geliştirme Aşamasında', 'Tamamlandı', 'Güncellendi', 'Bırakılmış/Desteklenmiyor'])]
 
 class DB_Manager:
     def __init__(self, database):
@@ -35,7 +35,7 @@ class DB_Manager:
                             status_name TEXT
                         )''')
             conn.commit()
-        print("Database created successfully")
+        print("Veri tabanı başarıyla oluşturuldu.")
 
     def __executemany(self, sql, data):
         conn = sqlite3.connect(self.database)
